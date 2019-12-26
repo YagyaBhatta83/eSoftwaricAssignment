@@ -14,6 +14,9 @@ import com.yagya.esoftwaricassignment.fragment.AboutUsFragment;
 import com.yagya.esoftwaricassignment.fragment.AddStudentFragment;
 import com.yagya.esoftwaricassignment.fragment.HomeFragment;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     private ActionBar toolbar;
 
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         toolbar.setTitle("Home");
     }
+    public static List<Student> studentList = new ArrayList<>();
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {

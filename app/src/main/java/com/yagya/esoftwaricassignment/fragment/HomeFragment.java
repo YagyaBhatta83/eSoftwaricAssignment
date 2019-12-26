@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.yagya.esoftwaricassignment.MainActivity;
 import com.yagya.esoftwaricassignment.R;
 import com.yagya.esoftwaricassignment.Student;
 import com.yagya.esoftwaricassignment.adapter.StudentAdapter;
@@ -37,14 +38,16 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         recyclerView = view.findViewById(R.id.recyclerView);
+        if (MainActivity.studentList.isEmpty()) {
+            MainActivity.studentList.add(new Student("Rupesh Dhakal", "22", "Balaju", "Male"));
+            MainActivity.studentList.add(new Student("Rita Sharma", "25", "Baneshwor", "Female"));
 
-        List<Student> studentList = new ArrayList<>();
+        } else {
+            StudentAdapter studentAdapter = new StudentAdapter(getContext(), MainActivity.studentList);
+            recyclerView.setAdapter(studentAdapter);
+            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        }
 
-        studentList.add(new Student("Rupesh Dhakal", "22", "Balaju", "Male"));
-        studentList.add(new Student("Rita Sharma", "25", "Baneshwor", "Female"));
-        StudentAdapter studentAdapter = new StudentAdapter(getContext(), studentList);
-        recyclerView.setAdapter(studentAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         return view;
     }
 

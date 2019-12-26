@@ -18,12 +18,13 @@ import com.yagya.esoftwaricassignment.Student;
 import java.util.List;
 
 public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentViewHolder> {
+    private final Context context;
     Context Context;
     List<Student> studentList;
 
     public StudentAdapter(Context context, List<Student> studentList){
-        this.Context = Context;
-        this.studentList= studentList;
+        this.context = context;
+        this.studentList = studentList;
     }
 
     @NonNull
@@ -57,7 +58,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         holder.ivProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Context,"hi"+student.getName(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,"hi" +student.getName(),Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -67,7 +68,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
                 Student st = studentList.get(position);
                 studentList.remove(position);
                 notifyItemRemoved(position);
-                Toast.makeText(Context,"Removed:"+st.getName(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,"Removed:" +st.getName(),Toast.LENGTH_SHORT).show();
             }
         });
     }

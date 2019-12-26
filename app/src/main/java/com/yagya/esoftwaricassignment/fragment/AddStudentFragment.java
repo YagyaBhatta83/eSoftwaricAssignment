@@ -15,6 +15,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.yagya.esoftwaricassignment.MainActivity;
 import com.yagya.esoftwaricassignment.R;
 import com.yagya.esoftwaricassignment.Student;
 
@@ -94,9 +95,7 @@ public class AddStudentFragment extends Fragment {
                     return;
                 }
 
-
-                List<Student> studentList = new ArrayList<>();
-                studentList.add(new Student(name,age,address,gender));
+                MainActivity.studentList.add(new Student(name,age,address,gender));
                 Toast.makeText(getActivity(), "Student added", Toast.LENGTH_SHORT).show();
 
                 etFullName.setText("");
