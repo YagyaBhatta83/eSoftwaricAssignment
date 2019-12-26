@@ -49,6 +49,13 @@
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/rbMale"
+                android:layout_margin="10dp"
+                android:text="Male"
+                android:textSize="20sp"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/rbFemale"
                 android:layout_margin="10dp"
                 android:text="Female"
@@ -59,13 +66,6 @@
                 android:id="@+id/rbOther"
                 android:layout_margin="10dp"
                 android:text="Other"
-                android:textSize="20sp"/>
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/rbMale"
-                android:layout_margin="10dp"
-                android:text="Male"
                 android:textSize="20sp"/>
         </RadioGroup>
         <EditText
