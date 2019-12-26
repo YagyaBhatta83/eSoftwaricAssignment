@@ -5,10 +5,86 @@
     android:layout_height="match_parent"
     tools:context=".fragment.AddStudentFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Student Details"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Full Name"
+            android:textSize="20sp"
+            android:id="@+id/etFullName"
+            android:layout_margin="10dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Age"
+            android:textSize="20sp"
+            android:id="@+id/etAge"
+            android:layout_margin="10dp"/>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="22sp"
+            android:layout_margin="10dp"
+            android:id="@+id/rgGender">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Select Gender"
+                android:id="@+id/tvSelectGender"
+                android:layout_margin="10dp"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rbFemale"
+                android:layout_margin="10dp"
+                android:text="Female"
+                android:textSize="20sp"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rbOther"
+                android:layout_margin="10dp"
+                android:text="Other"
+                android:textSize="20sp"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rbMale"
+                android:layout_margin="10dp"
+                android:text="Male"
+                android:textSize="20sp"/>
+        </RadioGroup>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Address"
+            android:id="@+id/etAddress"
+            android:layout_margin="10dp"
+            android:textSize="20sp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSave"
+            android:text="Save"
+            android:layout_marginBottom="20sp"
+            android:textSize="20sp"/>
+
+
+    </LinearLayout>
 
 </FrameLayout>
