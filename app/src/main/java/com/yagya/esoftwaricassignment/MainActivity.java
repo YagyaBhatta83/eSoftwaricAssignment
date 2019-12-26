@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.yagya.esoftwaricassignment.fragment.AboutUsFragment;
+import com.yagya.esoftwaricassignment.fragment.AddStudentFragment;
 import com.yagya.esoftwaricassignment.fragment.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,14 +34,6 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitle("Home");
     }
 
-    private void loadFragment(Fragment fragment) {
-        // load fragment
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container, fragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
-
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -49,15 +43,29 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     toolbar.setTitle("Home");
+                    fragment = new HomeFragment();
+                    loadFragment(fragment);
                     return true;
                 case R.id.navigation_addstudent:
                     toolbar.setTitle("Add Student");
+                    fragment = new AddStudentFragment();
+                    loadFragment(fragment);
                     return true;
                 case R.id.navigation_aboutus:
                     toolbar.setTitle("About Us");
+                    fragment = new AboutUsFragment();
+                    loadFragment(fragment);
                     return true;
             }
             return false;
         }
     };
+
+    private void loadFragment(Fragment fragment) {
+        // load fragment
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
 }
